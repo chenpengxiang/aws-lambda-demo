@@ -29,5 +29,36 @@ This is a demo for using aws lambda to provide typeahead data. There are two par
 - Install Python 3.6+
 
 - Install [serverless framework](https://github.com/serverless/serverless) 
+
+  ```
+  # create a serverless project using template aws-python3
+  $ serverless create --template aws-python3 --path data-service
+  ```
+
   
+
+## Deployment
+
+ [makefile](makefile)   
+
+- BUCKET_NAME  --  uploading the site static files to the bucket
+- CF_DISTRIBUTION_ID -- To clean cache for CloudFound distribution id
+
+```
+make sync   # sync the site folder to the s3 bucket
+make deploy # deploy get data lambda function 
+make clean-cache # to clean cloudfront cache
+```
+
+   
+
+### Demo 
+
+url:  https://d184d1gdauiaos.cloudfront.net/html/demo.html
+
+input options using:  aws, lang, 鞋子
+
+
+
+
 

@@ -20,36 +20,20 @@
            </div>
        </div>
     </div>
-  <script src="../js/jquery-3.2.1.slim.min.js"></script>
+  <script src="../js/jquery-3.5.1.min.js"></script>
   <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/typeahead.bundle.js"></script>
   <script>
-     var substringMatcher = function(strs) {
+     var substringMatcher = function() {
         return function findMatches(q, cb) {
-          var matches, substringRegex;
-
-          // an array that will be populated with substring matches
-          matches = [];
-
-          // regex used to determine if a string contains the substring `q`
-          substrRegex = new RegExp(q, 'i');
-
-          // iterate through the pool of strings and for any string that
-          // contains the substring `q`, add it to the `matches` array
-          $.each(strs, function(i, str) {
-            if (substrRegex.test(str)) {
-              matches.push(str);
-            }
-          });
-
-          cb(matches);
+          jQuery.ajaxSetup({async:false});
+          $.getJSON( "https://igdjlwf7m2.execute-api.us-east-1.amazonaws.com/data/" + q,
+            function(data){ 
+             cb(data);
+            });
         };
       };
-
-      var states = ['鞋子', '鞋子尺寸', '鞋子理论', '鞋子品牌', '鞋子码数',
-        'aws', 'aws收费模式', 'aws SQS', 'aws S3', 'aws lambda', 'aws rds'
-      ];
 
       $('#the-basics .typeahead').typeahead({
         hint: true,
@@ -58,7 +42,7 @@
       },
       {
         name: 'states',
-        source: substringMatcher(states)
+        source: substringMatcher()
       });
   </script>
   </body>

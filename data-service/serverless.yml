@@ -23,6 +23,7 @@ service: data-service
 provider:
   name: aws
   runtime: python3.8
+  
 
 # you can overwrite defaults here
 #  stage: dev
@@ -49,24 +50,34 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.py
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.py
-#    - exclude-me-dir/**
+package:
+ include:
+   - handler.py
+  # - include-me-dir/**
+ exclude:
+   - test.py
+   # - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  getData:
+    handler: handler.getData
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
+    events:
+     - httpApi:
+         path: /data/{query}
+         method: get
+         cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
