@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Demo Test</title>
+  </head>
+  <body>
+    
+    <div class="container">
+       <div class="row justify-content-md-center">
+          <h1> Demo Test</h1>
+       </div>
+       <div class="row">
+           <div id="the-basics" center>
+              <input class="typeahead" type="text" placeholder="Search">
+           </div>
+       </div>
+    </div>
+  <script src="../js/jquery-3.2.1.slim.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/typeahead.bundle.js"></script>
+  <script>
+     var substringMatcher = function(strs) {
+        return function findMatches(q, cb) {
+          var matches, substringRegex;
+
+          // an array that will be populated with substring matches
+          matches = [];
+
+          // regex used to determine if a string contains the substring `q`
+          substrRegex = new RegExp(q, 'i');
+
+          // iterate through the pool of strings and for any string that
+          // contains the substring `q`, add it to the `matches` array
+          $.each(strs, function(i, str) {
+            if (substrRegex.test(str)) {
+              matches.push(str);
+            }
+          });
+
+          cb(matches);
+        };
+      };
+
+      var states = ['鞋子', '鞋子尺寸', '鞋子理论', '鞋子品牌', '鞋子码数',
+        'aws', 'aws收费模式', 'aws SQS', 'aws S3', 'aws lambda', 'aws rds'
+      ];
+
+      $('#the-basics .typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+      {
+        name: 'states',
+        source: substringMatcher(states)
+      });
+  </script>
+  </body>
+</html>
