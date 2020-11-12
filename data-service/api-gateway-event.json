@@ -1,0 +1,109 @@
+{
+    "version": "1.0",
+    "resource": "/data/{query}",
+    "path": "/data/%E9%9E%8B",
+    "httpMethod": "GET",
+    "headers": {
+      "Content-Length": "0",
+      "Host": "xxxxx",
+      "User-Agent": "xxxxxx",
+      "X-Amzn-Trace-Id": "Root=xxxx",
+      "X-Forwarded-For": "x.x.x.x",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https",
+      "accept": "application/json, text/javascript, */*; q=0.01",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+      "origin": "https://xxx.cloudfront.net",
+      "referer": "https://xxx.cloudfront.net/",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site"
+    },
+    "multiValueHeaders": {
+      "Content-Length": [
+        "0"
+      ],
+      "Host": [
+        "xxx.execute-api.us-east-1.amazonaws.com"
+      ],
+      "User-Agent": [
+        "xxxx"
+      ],
+      "X-Amzn-Trace-Id": [
+        "Root=xxxxx"
+      ],
+      "X-Forwarded-For": [
+        "xx.xx.xx.xx"
+      ],
+      "X-Forwarded-Port": [
+        "443"
+      ],
+      "X-Forwarded-Proto": [
+        "https"
+      ],
+      "accept": [
+        "application/json, text/javascript, */*; q=0.01"
+      ],
+      "accept-encoding": [
+        "gzip, deflate, br"
+      ],
+      "accept-language": [
+        "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+      ],
+      "origin": [
+        "https://xxxxx.cloudfront.net"
+      ],
+      "referer": [
+        "https://xxxx.cloudfront.net/"
+      ],
+      "sec-fetch-dest": [
+        "empty"
+      ],
+      "sec-fetch-mode": [
+        "cors"
+      ],
+      "sec-fetch-site": [
+        "cross-site"
+      ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "requestContext": {
+      "accountId": "xxxx",
+      "apiId": "xxxx",
+      "domainName": "xxxx.execute-api.us-east-1.amazonaws.com",
+      "domainPrefix": "xxxx",
+      "extendedRequestId": "V3pAIgbDoAMEPew=",
+      "httpMethod": "GET",
+      "identity": {
+        "accessKey": null,
+        "accountId": null,
+        "caller": null,
+        "cognitoAmr": null,
+        "cognitoAuthenticationProvider": null,
+        "cognitoAuthenticationType": null,
+        "cognitoIdentityId": null,
+        "cognitoIdentityPoolId": null,
+        "principalOrgId": null,
+        "sourceIp": "xx.xx.xx.xx",
+        "user": null,
+        "userAgent": "xxxxx",
+        "userArn": null
+      },
+      "path": "/data/鞋",
+      "protocol": "HTTP/1.1",
+      "requestId": "V3pAIgbDoAMEPew=",
+      "requestTime": "12/Nov/2020:00:57:11 +0000",
+      "requestTimeEpoch": 1605142631143,
+      "resourceId": "GET /data/{query}",
+      "resourcePath": "/data/{query}",
+      "stage": "$default"
+    },
+    "pathParameters": {
+      "query": "鞋"
+    },
+    "stageVariables": null,
+    "body": null,
+    "isBase64Encoded": false
+  }

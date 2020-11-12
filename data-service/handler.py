@@ -10,6 +10,9 @@ def getData(event, context):
     if 'pathParameters' in event and 'query' in event['pathParameters']:
         result = [x for x in data if x.startswith(event['pathParameters']['query'])]
 
+    if not result:
+        print(f'cannot find the data for event: {event}')
+    
     response = {
         "statusCode": 200,
         "headers": {

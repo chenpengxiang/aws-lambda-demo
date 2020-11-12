@@ -55,7 +55,7 @@ package:
    - handler.py
   # - include-me-dir/**
  exclude:
-   - test.py
+   - test-*.py
    # - exclude-me-dir/**
 
 functions:
