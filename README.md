@@ -54,7 +54,7 @@ make clean-cache # to clean cloudfront cache
 
 ### Demo 
 
-url:  https://d184d1gdauiaos.cloudfront.net/html/demo.html
+url:  https://xxxx.cloudfront.net/html/demo.html
 
 input options using:  aws, lang, 鞋子
 
